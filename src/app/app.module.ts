@@ -14,6 +14,7 @@ import { ExpComponent } from './exp/exp.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo : '/exp', pathMatch: 'full'},
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     ExpComponent,
     ProjectsComponent,
     SkillsComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
