@@ -10,8 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "service-worker.js",
-        "node_modules/sw-toolbox/sw-toolbox.js"
+        "service-worker.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -21,9 +20,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/css/bootstrap.min.css",
+        "assets/css/material-kit.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/jquery.min.js",
+        "assets/js/bootstrap.min.js",
+        "assets/js/material.min.js",
+        "assets/js/nouislider.min.js",
+        "assets/js/bootstrap-datepicker.js",
+        "assets/js/material-kit.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

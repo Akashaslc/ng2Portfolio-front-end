@@ -1,0 +1,9 @@
+p {
+  min-width: 250px;
+  min-height: 100px;
+}
+
+#luna, #glados, #heart, #solarsystem {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
