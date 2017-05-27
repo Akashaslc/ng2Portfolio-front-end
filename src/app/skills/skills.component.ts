@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Chart} from 'chart.js';
+import { ChartsModule } from 'ng2-charts';
 
 @Component({
   selector: 'app-skills',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
