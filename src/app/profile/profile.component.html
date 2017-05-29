@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="header header-filter" style="background-image: url('http://res.cloudinary.com/akashaslc/image/upload/q_auto:best,y_0/v1495836586/header_wd8jvx.jpg');"></div>
+
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row">
+          <div class="profile">
+            <div class="avatar">
+              <img src="http://res.cloudinary.com/akashaslc/image/upload/q_auto:good/v1494782144/FullSizeR-20_jdrrdf.jpg" alt="Circle Image"
+                class="img-circle img-responsive img-raised">
+            </div>
+            <div class="name">
+              <h3 class="title">Samir Suthar</h3>
+              <h6>Web Developer</h6>
+            </div>
+          </div>
+        </div>
+        <div class="description text-center">
+          <p>Born and raised in Salt Lake City, I am a self taught web developer specializing in front-end development with
+            a passion to become a full stack developer. I love to make things that look pretty and are easy to interact with.
+            I’m constantly learning new things to better myself and my skills so that I can better help people!</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="profile-tabs">
+              <div class="nav-align-center">
+                <ul class="nav nav-pills nav-pills-success" role="tablist">
+                  <li routerLinkActive="active">
+                    <a routerLink="/profile/exp" role="tab" data-toggle="tab">
+                      <i class="material-icons">work</i>Experiences
+                    </a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/profile/projects" role="tab" data-toggle="tab">
+                      <i class="material-icons">palette</i>Projects
+                    </a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/profile/skills" role="tab" data-toggle="tab">
+                      <i class="material-icons">assessment</i>Skills
+                    </a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/profile/contact" role="tab" data-toggle="tab">
+                      <i class="material-icons">email</i>Contact
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="router">
+                  <router-outlet></router-outlet>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Profile Tabs -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

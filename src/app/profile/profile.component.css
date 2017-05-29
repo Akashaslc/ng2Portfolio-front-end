@@ -1,0 +1,8 @@
+li {
+  max-width: 100px;
+}
+@media (max-width:414px) {
+  ul.nav {
+    max-width: 216px;
+  }
+}

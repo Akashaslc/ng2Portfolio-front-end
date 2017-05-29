@@ -1472,7 +1472,7 @@ output {
 }
 .form-group.has-error label.control-label,
 .form-group.has-error .help-block {
-  color: #f44336;
+  color: #4caf50;
 }
 .form-group.has-success .form-control {
   box-shadow: none;

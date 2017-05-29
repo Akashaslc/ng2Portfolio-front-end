@@ -4,9 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { environment } from '../environments/environment';
 
 import { Chart } from 'chart.js';
@@ -19,12 +17,20 @@ import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChartComponent } from './chart/chart.component';
+import { ChartTwoComponent } from './chart-two/chart-two.component';
+import { ValidateService } from './services/validate.service';
+import { MailerService } from './services/mailer.service';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo : '/exp', pathMatch: 'full'},
-  {path: 'exp', component: ExpComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'skills', component: SkillsComponent}
+  { path: '', redirectTo : 'profile', pathMatch: 'full'},
+  { path: 'profile', component: ProfileComponent, children: [
+    { path: '', redirectTo: 'exp', pathMatch: 'full'},
+    { path: 'exp', component: ExpComponent},
+    { path: 'projects', component: ProjectsComponent},
+    { path: 'skills', component: SkillsComponent},
+    { path: 'contact', component: ContactComponent }
+  ] }
 ];
 
 @NgModule({
@@ -35,19 +41,19 @@ const appRoutes: Routes = [
     SkillsComponent,
     ContactComponent,
     FooterComponent,
-    ChartComponent
+    ChartComponent,
+    ChartTwoComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    ChartsModule
+    ChartsModule,
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [ValidateService, MailerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

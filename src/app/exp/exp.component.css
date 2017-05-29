@@ -5,3 +5,15 @@
    max-width: 200px;
    padding-top: 20px;
  }
+
+ #exp {
+  padding-top: 5%;
+  padding-bottom: 5%;
+ }
+
+ @media (min-width:768px) and (max-width: 900px) {
+   #exp {
+     padding-left: 20%;
+     padding-right: 20%;
+   }
+ }
