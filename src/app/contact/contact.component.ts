@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, Validators } from '@angular/forms';
 import { ValidateService } from '../services/validate.service';
 import { MailerService } from '../services/mailer.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -9,6 +10,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  contactForm: any;
   name: String;
   email: String;
   textarea: String;
@@ -16,9 +18,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private validateService: ValidateService,
     private mailerService: MailerService,
-    private flashMessage: FlashMessagesService,
-  ) {
-   }
+    private flashMessage: FlashMessagesService
+  ){ }
 
   ngOnInit() {
   }
@@ -29,13 +30,12 @@ export class ContactComponent implements OnInit {
       email: this.email,
       textarea: this.textarea
     }
-    this.mailerService.submitMessage(contact).subscribe(data => {
-      console.log(data);
-      if(data) {
-        this.flashMessage.show('Message Sent!', {cssClass: 'alert-success', timeout: 3000});
-      } else {
-        this.flashMessage.show('Could not send.', {cssClass: 'alert-danger', timeout: 3000});
-      }
+
+    console.log('Hello from onSubmit!');
+
+    this.mailerService.sendMail(contact).subscribe(data => {
+
     });
+    this.contactForm.reset();
   }
 }

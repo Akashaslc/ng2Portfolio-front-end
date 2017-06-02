@@ -8,7 +8,15 @@ export class MailerService {
 
   constructor(private http: Http) { }
 
-  public submitMessage(contact) {
-    return this.http.post(`http://localhost:3000/sendmail`, contact, null).map(res => res.json());
+  sendMail(contact){
+
+    console.log('Hello from sendMail!');
+
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post('contacts/sendmail', contact, {headers: headers})
+      .map(res => res.json());
+
   }
+
 }
